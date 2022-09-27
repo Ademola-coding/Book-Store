@@ -14,20 +14,18 @@ export default function BookList() {
     },
   ];
 
-  return (
+  return ( 
     <div className="list-container">
-
       <ul className="book-list">
-        {books.map((book) => (
-          <Book
-            title={book.title}
-            key={book.id}
-            book={book}
-            author={book.author}
-          />
-        ))}
+        {
+        books.map((book) => (
+           <Book
+            title={book.title} key={book.id}
+            author={book.author} book={book} 
+            />
+        ))
+        }
       </ul>
-
     </div>
   );
 }

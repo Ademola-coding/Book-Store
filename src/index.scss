@@ -23,3 +23,25 @@ button {
   background-color: teal;
   border: none;
 }
+
+p {
+  text-align: center;
+}
+  
+.links {
+  grid-column: 2;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.addBook {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+}

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/header-nav/Navbar';
-import Categories from './pages/Categories';
-import Books from './pages/Books';
+import Books from './pages/bookPage';
+import Categories from './pages/categoriesPage';
 
 export default function App() {
   return (
