@@ -3,10 +3,10 @@ import { Provider } from 'react-redux';
 import Navbar from './components/Navbar';
 import BookLists from './components/BookList';
 import Categories from './components/CategoriesPage';
-import store from './redux/configureStore';
+import Store from './redux/ConfigureStore';
 
 const App = () => (
-  <Provider store={store}>
+  <Provider store={Store}>
     <div className="App">
       <Navbar />
       <Routes>

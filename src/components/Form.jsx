@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+
+// select gotten from this package ( npm i react-select )
 import Select from 'react-select';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { AddBook } from '../redux/books/Books';
 
 const categories = [
   { value: '1', label: 'Action' },
@@ -35,7 +37,7 @@ const Form = () => {
       author,
     };
 
-    dispatch(addBook(newBook));
+    dispatch(AddBook(newBook));
     setTitle('');
     setAuthor('');
   };
@@ -52,6 +54,7 @@ const Form = () => {
           value={title}
           onChange={handleTitleChange}
           name="title"
+          required
         />
         <input
           type="text"
@@ -61,6 +64,7 @@ const Form = () => {
           value={author}
           name="author"
           onChange={handleAuthorChange}
+          required
         />
         <Select options={categories} className="select" />
         <input type="submit" value="ADD BOOK" className="add-book" />
