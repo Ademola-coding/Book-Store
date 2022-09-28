@@ -3,8 +3,8 @@
 # Book-Store
 
 > Description the project
-The Bookstore is a website where uses can add and remove books, and added books are displayed in a list built with react
 
+The Bookstore is a website where uses can add and remove books, and added books are displayed in a list built with react
 
 ## Built With
 
