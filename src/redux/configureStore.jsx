@@ -1,5 +1,13 @@
-// Configure the Redux Store:
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import booksReducer from './books/books';
+import bookStatusReducer from './categories/categories';
 
-// Importing the necessary methods from Redux Toolkit.
+const reducer = combineReducers({
+  booksReducer,
+  bookStatusReducer,
+});
 
-// Combine both reducers into a root reducer by using configureStore function
+const store = createStore(reducer, applyMiddleware(logger));
+
+export default store;

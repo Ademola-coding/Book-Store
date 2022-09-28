@@ -1,13 +1,16 @@
-// Write your categories actions and reducer
+const CHECK_STATUS = 'CHECK_STATUS';
 
-// Define an action type for checking the status.
+export const checkStatus = () => ({
+  type: CHECK_STATUS,
+});
 
-// Set the initial state to be an empty array of categories.
+const bookStatusReducer = (state = [], action) => {
+  switch (action.type) {
+    case CHECK_STATUS:
+      return ['Under construction'];
+    default:
+      return state;
+  }
+};
 
-// Export Action Creators for your actions.
-
-// Write your reducer and export it as default.
-
-// For the check status action return a string "Under construction".
-
-// In case of unknown action - return the current state.
+export default bookStatusReducer;
