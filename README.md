@@ -1,56 +1,43 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Book-Store
 
-> Description the project.
+> Description the project
 
+The Bookstore is a website where uses can add and remove books, and added books are displayed in a list built with react
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- Major languages : JavaScript
+- Frameworks React
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+you can have a copy of this project by cloning this repo to your local machine
+`https://github.com/Ademola-coding/Math-magicians.git`
 
+## procedure
+- open git bash
+- git mkdir Book-Store
+- cd Book-Store
+- git clone ` https://github.com/Ademola-coding/Book-Store.git `
+- code .
 
-To get a local copy up and running follow these simple example steps.
+## Install
+ 
+ - `npm i`
+ - `npm install react-redux @reduxjs/toolkit`
+ - `npm i --save redux-logger`
+ - `npm i react-select`
+ 
+ 
+with the steps above, you can have a copy of the project 
 
-### Prerequisites
+## Author
 
-### Setup
+👤 **Author**
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/Ademola-coding)
 
 ## 🤝 Contributing
 
