@@ -1,71 +1,54 @@
-import React, { useState } from 'react';
-
-// select gotten from this package ( npm i react-select )
-import Select from 'react-select';
+import React, { useState, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/books/books';
 
-// Import Redux useDispatch
-import { useDispatch } from 'react-redux';
-import { AddBook } from '../redux/books/Books';
+export default function Form() {
+  const [bookTitle, setBookTitle] = useState('');
+  const [bookAuthor, setBookAuthor] = useState('');
+  const titleInput = useRef();
+  const authorInput = useRef();
 
- export const categories = [
-  { value: '1', label: 'Action' },
-  { value: '2', label: 'Science' },
-  { value: '3', label: 'Economy' },
-  { value: '4', label: 'Fiction' },
-];
+  const books = useSelector((state) => state.books);
 
-const Form = () => {
+  const handleTitle = (e) => {
+    setBookTitle(e.target.value);
+  };
+  const handleAuthor = (e) => {
+    setBookAuthor(e.target.value);
+  };
+
   const dispatch = useDispatch();
 
-  // Set the data inputs in the local React state (set title and author)
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-
-  const handleTitleChange = (e) => {
-    e.preventDefault();
-    setTitle(e.target.value);
-  };
-
-  const handleAuthorChange = (e) => {
-    setAuthor(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Takes the inputs from the state and
-    //  generate a unique id and add them to an object.
-    const newBook = { id: uuidv4(), title : title, author : author, };
-
-    // dispatch a corresponding action (import Action Creator and use it here).
-    dispatch(AddBook(newBook));
-
-    setTitle('');
-    setAuthor('');
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>ADD NEW BOOK</h1>
-      <div className="form-container">
-        <input
-          type="text" className="input-title"
-          id="bookTitle" placeholder="Book Title"
-          value={title} onChange={handleTitleChange}
-          name="title" required
-        />
-        <input
-          type="text" className="input-title"
-          id="bookAuthor" placeholder="Book Author"
-          value={author}  name="author"
-          onChange={handleAuthorChange}  required
-        />
-        <Select options={categories} className="select" />
-        <input type="submit" value="ADD BOOK" className="add-book" />
-      </div>
-    </form>
-  );
-};
+    <div className="form-container">
+      <h2 className='newbookTitle'>ADD A NEW BOOK</h2>
+      <form
+        onSubmit={(e) => {
+          dispatch(addBook( {
+                          item_id: `item-${books.length + 1}`,  title: bookTitle,
+                          author: bookAuthor, id: uuidv4(),
+                          category: 'Fiction',
+            },
+          ));
+          titleInput.value = ''; authorInput.value = ''; e.preventDefault();
+        }}
+      >
 
-export default Form;
+        <input
+          ref={titleInput} type="text"
+          className="title-input" placeholder="Book title"
+          value={bookTitle} onChange={(e) => handleTitle(e)}
+          required
+        />
+
+        <input
+          ref={authorInput}  type="text"
+          className="author-input" placeholder="Book author"
+          value={bookAuthor} onChange={(e) => handleAuthor(e)} required
+        />
+        <button className="add-book" type="submit">ADD BOOK</button>
+      </form>
+    </div>
+  );
+}

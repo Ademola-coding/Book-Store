@@ -1,24 +1,22 @@
-import React from 'react';
-
-// Use useSelector to consume the state.
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import Book from './Book';
-import Form from './Form';
+import { getBooks } from '../redux/books/books';
 
-const BookLists = () => {
-  const books = useSelector( (state) => state.booksReducer);
-  const mappedBooks = books.map((book) => ( 
-                                            < Book 
-                                                 key={book.id}
-                                                 id={book.id} 
-                                                 title={book.title}
-                                                 author={book.author}
-                                            />
-                                          ));
+export default function BookList() {
+  const books = useSelector((state) => state.books, shallowEqual);
+  const dispatch = useDispatch();
+
+  // Dispatch an action (action type that existed before refactor) that will updates the state accordingly.
+  useEffect(() => { dispatch(getBooks()) }, [dispatch]);
 
   return (
-    <div className="generatedBookLists"> {mappedBooks}  <Form/></div>
-  );
-};
+    <div className="list-container">
 
-export default BookLists;
+      <ul className="book-list">
+        {books.map((book) => ( <Book key={book.item_id}  book={book} /> ))}
+      </ul>
+
+    </div>
+  );
+}

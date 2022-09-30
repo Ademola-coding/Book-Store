@@ -1,13 +1,24 @@
-/* eslint-disable */ 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App';
-import './index.scss';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Books from './components/Books';
+import Categories from './components/CategoryPages';
+import store from './redux/configureStore';
+import './index.scss'
 
-ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById('root'),
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Navbar />
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<Books />} />
+          <Route path="/categories" element={<Categories />} />
+        </Routes>
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>,
 );
