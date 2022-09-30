@@ -29,7 +29,6 @@ export default function book({ book }) {
       </div>
       <div className="chapter-info">
         <h3 className='chap'>Numbers of Chapters: 35</h3>
-        <button className="update-button chap" type="button">UPDATE PROGRESS</button>
       </div>
     </div>
   );

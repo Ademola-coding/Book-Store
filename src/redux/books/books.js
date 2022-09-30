@@ -26,16 +26,17 @@ const initialState = [
 // Add an Action Creator, that returns a function.
 function getBooks() {
   return async (dispatch) => {
-    
     // Fetch list of books.
-    const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/EbbXbXettf993NXxRytG/books');
+    const response = await
+    fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/EbbXbXettf993NXxRytG/books');
     const data = await response.json();
     const books = [];
-    
+
     // Refactor your add book and remove book features to persist your changes in the server.
-    Object.keys(data).forEach((e) => {  books.push({ ...data[e][0], item_id: e }); });
-    
-    // Dispatch another action (add an action type) that will pass API response to reducer and updates the state.
+    Object.keys(data).forEach((e) => { books.push({ ...data[e][0], item_id: e }); });
+
+    // Dispatch another action (add an action type)
+    // that will pass API response to reducer and updates the state.
     dispatch({
       type: GET_BOOKS,
       payload: books,
@@ -46,25 +47,24 @@ function getBooks() {
 const addBook = (book) => async (dispatch) => {
   await fetch(`${API_URL}/apps/EbbXbXettf993NXxRytG/books/`, {
     method: 'POST',
-    headers: {  'Content-Type': 'application/json',  },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(book),
   });
 
-  dispatch({ type: ADD_BOOK, payload: book, });
+  dispatch({ type: ADD_BOOK, payload: book });
 };
 
 const removeBook = (id) => async (dispatch) => {
-  await fetch(`${API_URL}/apps/EbbXbXettf993NXxRytG/books/${id}`, { method: 'DELETE', });
+  await fetch(`${API_URL}/apps/EbbXbXettf993NXxRytG/books/${id}`, { method: 'DELETE' });
   dispatch({
-     type: REMOVE_BOOK,
-     payload: id,
+    type: REMOVE_BOOK,
+    payload: id,
   });
 };
 
 export { addBook, removeBook, getBooks };
 
-
- // Change your existing Action Creators, so they return functions.
+// Change your existing Action Creators, so they return functions.
 export default function booksReducer(state = initialState, action = {}) {
   switch (action.type) {
     case ADD_BOOK:
