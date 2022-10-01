@@ -1,8 +1,214 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.link {
-  margin-left: 20px;
+body {
+  font-family:
+    'Segoe UI',
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  background-color: rgb(240, 240, 240);
+}
+
+.naving {
+  position: fixed;
+  display: flex;
+  padding: 1% 0;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -18px 24px 27px 1px rgba(255, 255, 255, 0.55);
+  -webkit-box-shadow: -18px 24px 10px 1px rgb(238, 238, 238, 0.55);
+  -moz-box-shadow: -18px 24px 15px 1px rgba(199, 198, 198, 0.55);
+
+  .logo {
+    margin-left: 5%;
+    color: #0290ff;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
+
+    .link {
+      margin-left: 30%;
+      margin-bottom: -10px;
+      color: #121212;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      color: #0290ff;
+    }
+  }
+}
+
+.booksContainer {
+  background-color: #f5f6fa;
+  padding: 1% 5%;
+  padding-top: 10%;
+
+  .eachBook {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    list-style: none;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    padding: 1% 5%;
+    padding-bottom: -50%;
+  }
+
+  .eachBook:hover {
+    background-color: #e8e8e8;
+  }
+
+  .mainInfo {
+    flex: 1;
+
+    .data {
+      .category {
+        color: #121212;
+      }
+
+      .title {
+        color: #000;
+      }
+
+      .author {
+        color: #4386bf;
+      }
+    }
+
+    .buttonsContainer {
+      display: flex;
+      margin-top: 5%;
+
+      .btn1 {
+        color: #4386bf;
+        height: 13px;
+        border: none;
+        background-color: white;
+        border-radius: 3px;
+      }
+
+      .btn1:hover {
+        background-color: #c0c0c0;
+      }
+
+      p {
+        margin-top: -5px;
+        margin-left: 3%;
+        color: #e8e8e8;
+      }
+
+      .adjust {
+        margin-left: 3%;
+      }
+    }
+  }
+
+  .info {
+    flex: 1;
+    display: flex;
+
+    .percentageData {
+      display: flex;
+
+      .align {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #121212;
+      }
+    }
+
+    .divider {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 10%;
+
+      .dot {
+        height: 70px;
+        width: 5%;
+        background-color: #e8e8e8;
+        color: #fff;
+      }
+    }
+
+    .CompletedNChapter {
+      .currChap {
+        color: #8e8e8e;
+        font-size: smaller;
+        margin-bottom: 4%;
+      }
+
+      .chapter {
+        color: #292626;
+        margin-bottom: 3%;
+      }
+
+      .update {
+        margin-top: 20px;
+        padding: 5px 15px;
+        border-radius: 8px;
+        background-color: #0290ff;
+        color: white;
+        border: none;
+      }
+    }
+  }
+}
+
+circle {
+  fill: transparent;
+  stroke: #307bbe;
+  stroke-width: 5px;
+  stroke-dasharray: 120;
+}
+
+form {
+  margin: 3% 5%;
+
+  .liny {
+    height: 2px;
+    width: 100%;
+    background-color: #fafafa;
+  }
+
+  h2 {
+    color: #888;
+    margin: 2% 0;
+  }
+
+  #author {
+    margin-left: 2%;
+  }
+
+  select {
+    margin-left: 2%;
+    width: 25%;
+    height: 25px;
+    border: none;
+    outline: none;
+  }
+
+  input {
+    outline: none;
+    width: 25%;
+    height: 25px;
+    border: none;
+  }
+
+  button {
+    margin-left: 2%;
+    padding: 0.2% 4%;
+    background-color: #307bbe;
+    border: none;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+  }
 }
