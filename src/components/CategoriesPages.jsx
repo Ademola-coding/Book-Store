@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { checkStatus } from '../redux/categories/Categories';
+import { CheckStatus } from '../redux/categories/Categories'
 
 const Categories = () => {
   const status = useSelector((state) => state.categories);
@@ -9,7 +9,7 @@ const Categories = () => {
     <div>
       <p>{status}</p>
       <button type="button" className="btn2"
-       onClick={() => dispatch(checkStatus())}>Check Status</button>
+       onClick={() => dispatch(CheckStatus())}>Check Status</button>
     </div>
   );
 };

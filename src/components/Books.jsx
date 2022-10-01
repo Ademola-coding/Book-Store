@@ -1,13 +1,13 @@
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 import BookItem from '../components/BookItem';
-import { getBooks } from '../redux/books/ApiBook';
+import { GetBooks } from '../redux/books/ApiBook';
 import FormAdd from './Form';
 
 const Books = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => { dispatch(getBooks()); }, []);
+  useEffect(() => { dispatch(GetBooks()); }, []);
 
   const books = useSelector((state) => state.books, shallowEqual);
 
