@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ADD_ARR_BOOK, ADD_BOOK, REMOVE_BOOK } from './Books';
 

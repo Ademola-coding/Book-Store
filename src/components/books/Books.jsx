@@ -16,18 +16,14 @@ const Books = () => {
   const listBooks = books.map((item) => (
     <BookItem
       key={item.id}
-      id={item.id}
-      title={item.title}
-      author={item.author}
-      category={item.category}
+      id={item.id} title={item.title}
+      author={item.author} category={item.category}
     />
   ));
 
   return (
     <div className="booksContainer">
-      <ul>
-        {listBooks}
-      </ul>
+      <ul> {listBooks} </ul>
       <FormAdd />
     </div>
   );
