@@ -1,4 +1,4 @@
- /* eslint-disable */
+/* eslint-disable */
 import { configureStore } from '@reduxjs/toolkit/dist';
 import reducerBooks from './books/Books';
 import reducerCategories from './categories/Categories';
