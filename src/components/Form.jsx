@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { addBooksApi } from '../../redux/books/ApiBook';
+import { addBooksApi } from '../redux/books/ApiBook';
 
 const FormAdd = () => {
   const [title, setTitle] = useState('');
@@ -12,12 +12,7 @@ const FormAdd = () => {
   const handleAdd = () => {
     if (title === '' || author === '' || category === '' || category === 'DEFAULT') return;
 
-    const newBook = {
-      id: nanoid(),
-      title,
-      author,
-      category,
-    };
+    const newBook = { id: nanoid(), title, author, category, };
 
     dispatch(addBooksApi(newBook));
     setTitle('');
@@ -27,11 +22,16 @@ const FormAdd = () => {
 
   return (
     <form>
-      <div>
+
+      <div className='liny'></div>
+
+      <h2>ADD NEW BOOK</h2>
+
+      <div className='inputs'>
         <input id="title" type="text" placeholder="title" value={title} onChange={(e) => setTitle(e.target.value)} />
         <input id="author" type="text" placeholder="author" value={author} onChange={(e) => setAuthor(e.target.value)} />
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option disabled value="DEFAULT">--select an option--</option>
+          <option disabled value="DEFAULT">select an option</option>
           <option value="Fiction">Fiction</option>
           <option value="Romance">Romance</option>
           <option value="Action">Action</option>
@@ -39,8 +39,9 @@ const FormAdd = () => {
           <option value="Drama">Drama</option>
           <option value="Horror">Horror</option>
         </select>
+        <button type="button" onClick={handleAdd}>ADD BOOK</button>
       </div>
-      <button type="button" onClick={handleAdd}>ADD BOOK</button>
+      
     </form>
   );
 };
