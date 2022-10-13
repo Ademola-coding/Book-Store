@@ -1,13 +1,13 @@
 /* eslint-disable */
 import { configureStore } from '@reduxjs/toolkit/dist';
-import reducerBooks from './books/Books';
-import reducerCategories from './categories/Categories';
+import ReducerBooks from './books/Books';
+import ReducerCategories from './categories/Categories';
 
-const store = configureStore({
+const Store = configureStore({
   reducer: {
-    books: reducerBooks,
-    categories: reducerCategories,
+    books: ReducerBooks,
+    categories: ReducerCategories,
   },
 });
 
-export default store;
+export default Store;

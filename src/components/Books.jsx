@@ -1,22 +1,18 @@
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-import BookItem from '../BookItem/BookItem';
-import { getBooks } from '../../redux/books/ApiBook';
-import FormAdd from '../Form/Form';
+import BookItem from '../components/BookItem';
+import { GetBooks } from '../redux/books/ApiBook';
+import FormAdd from './Form';
 
 const Books = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getBooks());
-  }, []);
+  useEffect(() => { dispatch(GetBooks()); }, []);
 
   const books = useSelector((state) => state.books, shallowEqual);
 
   const listBooks = books.map((item) => (
-    <BookItem
-      key={item.id}
-      id={item.id} title={item.title}
+    <BookItem key={item.id} id={item.id} title={item.title}
       author={item.author} category={item.category}
     />
   ));
