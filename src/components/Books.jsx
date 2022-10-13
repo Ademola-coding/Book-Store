@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 import BookItem from '../components/BookItem';

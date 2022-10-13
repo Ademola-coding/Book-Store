@@ -1,11 +1,10 @@
 /* eslint-disable */
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Books from './components/Books';
 import Categories from './components/CategoriesPages';
 import NavBar from './components/NavBar';
 
-const App = () => (
+const App = () => (  
   <BrowserRouter>
     <NavBar />
     <Routes>

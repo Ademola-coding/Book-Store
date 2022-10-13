@@ -1,3 +1,4 @@
+/* eslint-disable */
 const STATUS_CHECKED = 'bookstore/categories/CHECKED';
 const initialState = [];
 
