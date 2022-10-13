@@ -1,17 +1,20 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/header-nav/Navbar';
-import Categories from './pages/Categories';
-import Books from './pages/Books';
+import { Provider } from 'react-redux';
+import Navbar from './components/Navbar';
+import BookLists from './components/BookList';
+import Categories from './components/CategoriesPage';
+import Store from './redux/ConfigureStore';
 
-export default function App() {
-  return (
-    <>
+const App = () => (
+  <Provider store={Store}>
+    <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Books />} />
-        <Route path="/categories" element={<Categories />} />
+        <Route path="/" element={<BookLists />} />
+        <Route exact path="/categories" element={<Categories />} />
       </Routes>
-    </>
-  );
-}
+    </div>
+  </Provider>
+);
+
+export default App;
