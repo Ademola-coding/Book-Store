@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { CheckStatus } from '../redux/categories/Categories'
+import { CheckStatus } from '../redux/categories/categories'
 
 const Categories = () => {
   const status = useSelector((state) => state.categories);

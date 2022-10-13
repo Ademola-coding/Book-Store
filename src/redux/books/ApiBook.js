@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ADD_ARR_BOOK, ADD_BOOK, REMOVE_BOOK } from './Books';
+import { ADD_ARR_BOOK, ADD_BOOK, REMOVE_BOOK } from './books'
 
 const UNIQ_ID = 'EbbXbXettf993NXxRytG';
 const BASE_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${UNIQ_ID}/books/`;

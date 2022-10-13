@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { configureStore } from '@reduxjs/toolkit/dist';
-import ReducerBooks from './books/Books';
-import ReducerCategories from './categories/Categories';
+import ReducerBooks from './books/books'
+import ReducerCategories from './categories/categories'
 
 const Store = configureStore({
   reducer: {
