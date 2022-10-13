@@ -11,6 +11,10 @@ The Bookstore is a website where uses can add and remove books, and added books 
 - Major languages : JavaScript
 - Frameworks React
 
+## Live Demo
+
+[kindly view](https://magical-llama-8b7ace.netlify.app/)
+
 ## Getting Started
 
 you can have a copy of this project by cloning this repo to your local machine
