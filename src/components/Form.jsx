@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 // select gotten from this package ( npm i react-select )
 import Select from 'react-select';
 import { v4 as uuidv4 } from 'uuid';
+
+// Import Redux useDispatch
 import { useDispatch } from 'react-redux';
 import { AddBook } from '../redux/books/Books';
 
-const categories = [
+ export const categories = [
   { value: '1', label: 'Action' },
   { value: '2', label: 'Science' },
   { value: '3', label: 'Economy' },
@@ -16,6 +18,7 @@ const categories = [
 const Form = () => {
   const dispatch = useDispatch();
 
+  // Set the data inputs in the local React state (set title and author)
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
@@ -31,13 +34,13 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newBook = {
-      id: uuidv4(),
-      title,
-      author,
-    };
+    // Takes the inputs from the state and
+    //  generate a unique id and add them to an object.
+    const newBook = { id: uuidv4(), title : title, author : author, };
 
+    // dispatch a corresponding action (import Action Creator and use it here).
     dispatch(AddBook(newBook));
+
     setTitle('');
     setAuthor('');
   };
@@ -47,24 +50,16 @@ const Form = () => {
       <h1>ADD NEW BOOK</h1>
       <div className="form-container">
         <input
-          type="text"
-          className="input-title"
-          id="bookTitle"
-          placeholder="Book Title"
-          value={title}
-          onChange={handleTitleChange}
-          name="title"
-          required
+          type="text" className="input-title"
+          id="bookTitle" placeholder="Book Title"
+          value={title} onChange={handleTitleChange}
+          name="title" required
         />
         <input
-          type="text"
-          className="input-title"
-          id="bookAuthor"
-          placeholder="Book Author"
-          value={author}
-          name="author"
-          onChange={handleAuthorChange}
-          required
+          type="text" className="input-title"
+          id="bookAuthor" placeholder="Book Author"
+          value={author}  name="author"
+          onChange={handleAuthorChange}  required
         />
         <Select options={categories} className="select" />
         <input type="submit" value="ADD BOOK" className="add-book" />
