@@ -4,7 +4,13 @@
 
 > Description the project
 
-The Bookstore is a web application that interacts with API where uses can add and remove books, and added books are displayed in a list, each book data is being posted to an API and can be removed from the API. Built with react and Redux
+The Bookstore is a web application that interacts with API where uses can add and remove books, and added books are displayed in a list, each book data is being posted to an API and can be removed from the API. Built with react and Redux.
+
+![React App 11-7-2022 9-08-53 PM](https://user-images.githubusercontent.com/96092850/200431780-145d3b5d-30c0-426d-9bb2-a791a83e5613.png)
+
+## Video Description
+
+[click for video](https://magical-llama-8b7ace.netlify.app/)
 
 ## Built With
 
